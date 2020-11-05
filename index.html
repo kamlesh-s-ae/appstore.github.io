@@ -30,7 +30,7 @@ window.addEventListener('authorized', function() {
 window.event = new Event('image_selected');
 window.addEventListener("image_selected", function (e) {
   alert(e.detail.path);
-  var image = document.getElementsByName("profileImage")[0];
+  var image = window.getElementsByName("profileImage")[0];
   image.src = e.detail.path;
 });
 
