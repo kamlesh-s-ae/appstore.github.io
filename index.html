@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+  <style>
 .button {
   border: none;
   color: white;
@@ -20,13 +20,25 @@
 </style>
 </head>
 <body>
-  <script>
+<script>
 
 window.event = new Event('authorized');
 window.addEventListener('authorized', function() {
     alert('Biometrics Authentication successfull...');
 }, false);
 
+window.event = new Event('image_selected');
+window.addEventListener("image_selected", function (e) {
+  alert(e.detail.path);
+});
+
+function getImagePath() {
+  var selectionFired = new CustomEvent("image_selected", {
+    "detail": {"path":"this is test path" }
+  });
+
+  window.dispatchEvent(selectionFired);
+};
 
 function openBiometrics() {
   Mobile.openBiometrics();
@@ -49,13 +61,14 @@ function loginSuccessful(message) {
 }
 
 </script>
-  <center><h1>Call native functions from web pages</h1>
-    <p><button class="button button1" onclick="openBiometrics()">Open Biometrics</button></p>
-    <p><button class="button button2" onclick="scanQrCode()">Scan QR Code</button></p>
-    <p><button class="button button1" onclick="openGallery()">Open Gallery</button></p>
-    <p><button class="button button2" onclick="closeApp()">Close app</button></p>
-    <p><button class="button button1" onclick="loginSuccessful('App 1.0.0 is running...')">Health Check</button></p>
-    <p><input id="myFileInput" type="file" accept="image/*;capture=camera"></p>
-  </center>
+<center><h1>Call native functions from web pages</h1>
+  <p><button class="button button1" onclick="openBiometrics()">Open Biometrics</button></p>
+  <p><button class="button button2" onclick="scanQrCode()">Scan QR Code</button></p>
+  <p><button class="button button1" onclick="openGallery()">Open Gallery</button></p>
+  <p><button class="button button2" onclick="closeApp()">Close app</button></p>
+  <p><button class="button button1" onclick="loginSuccessful('App 1.0.0 is running...')">Health Check</button></p>
+  <p><button class="button button1" onclick="getImagePath()">Open Gallery2</button></p>
+  <p><img src="image1.jpg" id="profileImage" /></p>
+</center>
 </body>
 </html>
