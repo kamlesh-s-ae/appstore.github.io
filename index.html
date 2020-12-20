@@ -55,7 +55,11 @@ function openGallery() {
 }
 
 function closeApp() {
-  Mobile.closeApp();
+  //Mobile.closeApp();
+var closeApp = new CustomEvent("popWindow", {
+    "detail": {"path":"this is test path" }
+  });
+	window.dispatchEvent(closeApp);
 }
 
 function loginSuccessful(message) {
