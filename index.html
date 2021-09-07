@@ -86,6 +86,7 @@ function abNeoTest() {
 }
 	
 function abNeoProcessPaymentCB(response) {
+	alert(response);
 	console.log(response);
 }
 	
@@ -99,7 +100,7 @@ function abNeoProcessPaymentCB(response) {
   <p><button class="button button1" onclick="getImagePath()">Open Gallery2</button></p>
   <p><img src="/storage/emulated/0/DCIM/Camera/IMG_20201105_181429090.jpg" id="profileImage" /></p>
 </center> -->
-<center><h1>Call native functions from web pages 10.</h1>
+<center><h1>Call native functions from web pages 11.</h1>
   <p><button class="button button1" onclick="fetchAuthCode1()">Get Auth Code</button></p>
   <p><button class="button button1" onclick="loginSuccessful(' You are logged in successfully !!!')">Login Miniapp</button></p>
   <p><button class="button button1" onclick="abNeoTest()">Empty Function Call</button></p>
