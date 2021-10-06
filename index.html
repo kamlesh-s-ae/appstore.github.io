@@ -88,9 +88,11 @@ function abNeoTest() {
 	var answer = window.confirm("Cancel order?");
 	if (answer) {
 	    console.log("Yes");
+		document.getElementById("demo").innerHTML = "User pressed YES";
 	}
 	else {
 	   console.log("No");
+		document.getElementById("demo").innerHTML = "User pressed NO";
 	}
 }
 	
@@ -116,6 +118,7 @@ function abNeoProcessPaymentCB(response) {
   <p><button class="button button1" onclick="loginSuccessful(' You are logged in successfully !!!')">Login Miniapp</button></p>
   <p><button class="button button1" onclick="abNeoTest()">Empty Function Call</button></p>
   <p><button class="button button1" onclick="abNeoProcessPaymentCB('Payment done')">Call Payment Done</button></p>
+	<p id="demo"></p>
 </center>
 </body>
 </html>
