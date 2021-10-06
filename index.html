@@ -83,13 +83,23 @@ function fetchAuthCode1() {
 
 function abNeoTest() {
 	//NEOJSBridge.abNeoTest();
-	alert("Hello Kamlesh");
+	//alert("Hello Kamlesh");
+	
+	var answer = window.confirm("Cancel order?");
+	if (answer) {
+	    console.log("Yes");
+	}
+	else {
+	   console.log("No");
+	}
 }
 	
 function abNeoProcessPaymentCB(response) {
 	alert(response);
 	console.log(response);
 }
+	
+	
 	
 </script>
 <!--- <center><h1>Call native functions from web pages</h1>
